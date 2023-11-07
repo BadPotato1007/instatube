@@ -3,16 +3,19 @@ import os
 import random
 import json
 
-# clips = []
-# i = 1
-# path="./toprocess/"
-# for filename in os.listdir(path):
-#     my_dest = "./processed/" + str(i) + ".mp4"
-#     my_source =path + filename
-#     # rename() function will
-#     # rename all the files
-#     os.rename(my_source, my_dest)
-#     i += 1
+clips = []
+i = 1
+path="./toprocess/"
+for filename in os.listdir(path):
+    if filename.endswith(".mp4"):
+        my_dest = "./processed/" + str(i) + ".mp4"
+        my_source =path + filename
+        # rename() function will
+        # rename all the files
+        os.rename(my_source, my_dest)
+        i += 1
+    else:
+        os.remove(path + filename)
 
 N = 1
 F = 1
